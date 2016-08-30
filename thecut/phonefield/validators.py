@@ -33,7 +33,7 @@ class PhoneNumberValidator(object):
             region=self.region if self.region else 'international')
 
 
-# Depreacted
+# Deprecated
 
 class AUPhoneNumberValidator(PhoneNumberValidator):
 

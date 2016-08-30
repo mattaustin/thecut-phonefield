@@ -50,9 +50,9 @@ class PhoneNumberField(CharField):
         return utils.format_for_display(value, self.phone_number_region)
 
     def widget_attrs(self, *args, **kwargs):
-        widget_attrs = super(PhoneNumberField, self).widget_attrs(*args,
-                                                                  **kwargs)
-        widget_attrs.setdefault('placeholder', self.phone_number_placeholder)
+        widget_attrs = {'placeholder': self.phone_number_placeholder}
+        widget_attrs.update(
+            super(PhoneNumberField, self).widget_attrs(*args, **kwargs))
         return widget_attrs
 
 
