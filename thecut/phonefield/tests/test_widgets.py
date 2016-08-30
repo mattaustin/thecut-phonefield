@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 from ..widgets import PhoneInput
-from django.core import mail
 from django.test import TestCase
 
 
