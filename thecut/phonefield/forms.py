@@ -4,7 +4,6 @@ from . import utils, validators, widgets
 from django.core.validators import EMPTY_VALUES
 from django.forms import CharField
 import phonenumbers
-import re
 
 
 class PhoneNumberField(CharField):
@@ -44,7 +43,7 @@ class PhoneNumberField(CharField):
             return ''
         value = phonenumbers.parse(value, self.phone_number_region)
         value = phonenumbers.format_number(value, self.phone_number_format)
-        return re.sub(r'[^+\d+]+', '', value)
+        return value.replace(' ', '')
 
     def prepare_value(self, value):
         return utils.format_for_display(value, self.phone_number_region)

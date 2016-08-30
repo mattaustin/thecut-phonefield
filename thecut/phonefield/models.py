@@ -4,7 +4,6 @@ from . import forms, validators
 from django.core.exceptions import ValidationError
 from django.db.models import CharField
 import phonenumbers
-import re
 
 
 class PhoneNumberField(CharField):
@@ -69,4 +68,4 @@ class PhoneNumberField(CharField):
             raise ValidationError(self.error_messages['invalid'],
                                   code='invalid', params={'value': value})
         value = phonenumbers.format_number(value, self.phone_number_format)
-        return re.sub(r'[^+\d+]+', '', value)
+        return value.replace(' ', '')
