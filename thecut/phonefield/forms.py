@@ -21,7 +21,7 @@ class PhoneNumberField(CharField):
 
     def __init__(self, *args, **kwargs):
         phone_number_format = kwargs.pop('format', None)
-        phone_number_placeholder = kwargs.pop('region', None)
+        phone_number_placeholder = kwargs.pop('placeholder', None)
         phone_number_region = kwargs.pop('region', None)
 
         if phone_number_format is not None:
