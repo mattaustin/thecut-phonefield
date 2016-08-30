@@ -26,7 +26,7 @@ class PhoneNumberValidator(object):
         except phonenumbers.NumberParseException:
             raise ValidationError(self.get_message())
         if not phonenumbers.is_valid_number(phonenumber):
-            raise ValidationError(self.self.get_message())
+            raise ValidationError(self.get_message())
 
     def get_message(self):
         return self.message.format(
