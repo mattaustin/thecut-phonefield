@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-from setuptools import setup, find_packages
-from version import get_git_version
-
-
-setup(
-    name='thecut-phonefield',
-    author='The Cut',
-    author_email='development@thecut.net.au',
-    url='https://projects.thecut.net.au/projects/thecut-phonefield',
-    namespace_packages=['thecut'],
-    version=get_git_version(),
-    packages=find_packages(),
-    include_package_data=True,
-    install_requires=['phonenumbers>=7.2.3,<8'],
-=======
 from __future__ import print_function
 import codecs
 import io
@@ -40,7 +24,7 @@ long_description = read('README.rst', 'HISTORY.rst')
 
 setup(
     # General information
-    name='thecut-exampleapp',
+    name='thecut-phonefield',
     version=__version__,
 
     # Packaging
@@ -56,18 +40,18 @@ setup(
     author_email='development@thecut.net.au',
 
     # Additional information
-    url='https://projects.thecut.net.au/projects/thecut-exampleapp',
-    license='Apache Software License 2.0',
-    description='A reusable application.',
+    url='https://projects.thecut.net.au/projects/thecut-phonefield',
+    #license='Apache Software License 2.0',
+    description='Django field which validates phone numbers, in particular Australian phone numbers.',
     long_description=long_description,
     platforms='any',
     classifiers=[
         'Programming Language :: Python',
-        'Development Status :: 1 - Planning',
+        #'Development Status :: 1 - Planning',
         # 'Development Status :: 2 - Pre-Alpha',
         # 'Development Status :: 3 - Alpha',
         # 'Development Status :: 4 - Beta',
-        # 'Development Status :: 5 - Production/Stable',
+         'Development Status :: 5 - Production/Stable',
         # 'Development Status :: 6 - Mature',
         # 'Development Status :: 7 - Inactive',
         'Natural Language :: English',
@@ -83,5 +67,4 @@ setup(
         'Framework :: Django :: 1.9',
         'Framework :: Django :: 1.10',
     ],
->>>>>>> da/master
 )
