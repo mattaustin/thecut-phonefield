@@ -1,3 +1,5 @@
 =================
 thecut.phonefield
 =================
+
+A Django validator / form field for Australian phone numbers.
