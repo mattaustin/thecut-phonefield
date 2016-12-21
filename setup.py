@@ -33,7 +33,7 @@ setup(
     include_package_data=True,
 
     # Dependencies
-    install_requires=[],
+    install_requires=['phonenumbers>=7.2.3,<8'],
 
     # Author information
     author='The Cut Creative',
