@@ -2,7 +2,7 @@ from __future__ import print_function
 import codecs
 import io
 import os
-from thecut.exampleapp import __version__
+from thecut.phonefield import __version__
 from setuptools import setup, find_packages
 import sys
 
