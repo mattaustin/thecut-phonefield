@@ -2,6 +2,7 @@
 from __future__ import absolute_import, unicode_literals
 from unittest import TestCase
 from thecut.phonefield.validators import PhoneNumberValidator
+from django.core.exceptions import ValidationError
 
 
 try:  # Python 3
@@ -22,3 +23,19 @@ class TestValidatorMessage(TestCase):
         self.assertEqual(v.get_message(), 'Enter a valid AU phone '
                          'number. Please ensure the full phone number is '
                          'provided.')
+
+
+class TestValidation(TestCase):
+    def test_not_a_number(self):
+        v = PhoneNumberValidator(region='AU')
+        with self.assertRaises(ValidationError):
+            v('blah')
+
+    def test_not_valid_phone_number(self):
+        v = PhoneNumberValidator(region='AU')
+        with self.assertRaises(ValidationError):
+            v('1223')
+
+    def test_is_valid_phone_number(self):
+        v = PhoneNumberValidator(region='AU')
+        v('0894051234')
