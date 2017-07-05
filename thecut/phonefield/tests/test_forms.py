@@ -44,4 +44,3 @@ class TestAUPhoneNumberField(TestCase):
     def test_prepare_value(self):
         f = PhoneNumberField(region='AU')
         self.assertEqual(f.prepare_value('+61894051234'), '(08) 9405 1234')
-

@@ -5,12 +5,6 @@ from thecut.phonefield.validators import PhoneNumberValidator
 from django.core.exceptions import ValidationError
 
 
-try:  # Python 3
-    from unittest import mock
-except ImportError:  # Python 2
-    import mock
-
-
 class TestValidatorMessage(TestCase):
     def test_no_region(self):
         v = PhoneNumberValidator()
