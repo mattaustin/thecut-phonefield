@@ -40,3 +40,7 @@ class TestPhoneNumberField(TestCase):
     def test_to_python_raises_validationerror_when_given_an_invalid_string(self):  # NOQA
 
         self.assertRaises(ValidationError, self.field.to_python, 'INVALID')
+
+    def test_setting_phone_number_format(self):
+        f = models.PhoneNumberField(format='FORMAT')
+        self.assertEqual(f.phone_number_format, 'FORMAT')
