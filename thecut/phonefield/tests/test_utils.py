@@ -42,13 +42,13 @@ class TestFormatForDisplay(TestCase):
                          phonenumbers.PhoneNumberFormat.INTERNATIONAL)
 
     @mock.patch('phonenumbers.format_number')
-    def test_phone_number_not_parsed(self, mock_format_number):
+    def test_phone_number_not_formatted(self, mock_format_number):
         format_for_display('08 9988 4442')
         called = mock_format_number.call_count
         self.assertEqual(called, 0)
 
     @mock.patch('phonenumbers.format_number')
-    def test_phone_number_parsed(self, mock_format_number):
+    def test_phone_number_formatted(self, mock_format_number):
         format_for_display('+61 99 5555 4444')
         called = mock_format_number.call_count
         self.assertEqual(called, 1)
